@@ -1,0 +1,57 @@
+Ubntu add custome resultaions and show this type of errors
+
+
+=========================================================================
+X Error of failed request:  BadValue (integer parameter out of range for operation)
+  Major opcode of failed request:  139 (RANDR)
+  Minor opcode of failed request:  21 (RRSetCrtcConfig)
+  Value in failed request:  0x0
+  Serial number of failed request:  22
+  Current serial number in output stream:  22
+
+
+
+================================================
+First please check your graphic card is enable or not. if your graphic card is not enabled please follow the process.
+
+Step 1:
+- Please open your bios menu.
+- reboot your system and long press "Delete" Keyword .
+
+Step 2:
+open the bios menu go to chepest sctions.
+
+Step 3: 
+enabled the intel graphic card.
+==================================================
+After Follow this process
+
+Step: 1 
+go to terminal crtl+ Alt + T
+
+step: 2
+NOTE:- this command for active and connect port 
+Terminal hit this command
+for p in /sys/class/drm/*/status; do con=${p%/status}; echo -n "${con#*/card?-}: "; cat $p; done
+
+This command oputput
+DP-1: connected
+HDMI-A-1: disconnected
+
+step: 3
+open grub for this command
+sudo gedit /etc/default/grub
+
+Step: 4 
+add this line grub and save the file 
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash video=DP-1:1920x1080@60"
+NOTE: 
+DP-1 this keyword  change your connect port.
+
+Step: 5
+After the save file and hit this command
+sudo update-grub
+
+Step: 6
+reboot the system
+
