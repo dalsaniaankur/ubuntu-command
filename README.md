@@ -48,3 +48,15 @@ https://computingforgeeks.com/install-and-use-firewalld-on-ubuntu/
 
 sudo apt-get autoremove 
 sudo apt-get autoclean
+
+-------
+#!/bin/sh
+
+sudo apt-get update;
+sudo find /tmp -type f -delete;
+sudo apt-get autoclean;
+sudo apt-get autoremove;
+
+clear_temp.sh
+
+sudo chmod +x clear_temp.sh
