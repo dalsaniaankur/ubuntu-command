@@ -3,8 +3,8 @@
 
 mysql -u root -p ecd < /home/dev/Downloads/DB/ecd_2306.sql
 
-sudo service apache2 restart
-sudo systemctl restart apache2
+- sudo service apache2 restart
+- sudo systemctl restart apache2
 sudo systemctl reload apache2
 sudo systemctl status apache2
 
